@@ -1,5 +1,5 @@
 function Header({ children }) {
-  return <div className="bg-gradient-to-bottom py-10">{children}</div>;
+  return <header className="bg-gradient-to-bottom py-10">{children}</header>;
 }
 
 export default Header;
