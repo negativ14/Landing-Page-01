@@ -12,7 +12,7 @@ function FAQs() {
 
     const questionsArr = categoryObj.questions;
     console.log("this is quetions array",questionsArr);
-    
+
     const handleQuestionClick = (id) => id === activeQuestion ? setActivequestion(null) : setActivequestion(id);
 
     const handleCategoryClick = (category) => {
@@ -20,7 +20,7 @@ function FAQs() {
         setCategory(category)
     }
 
-    return <section className="bg-gradient-to-bottom justify-items-center">
+    return <section className="bg-gradient-to-bottom -mt-1 justify-items-center">
         <div className="w-full max-w-[90rem] py-32">
 
             <h2 className="text-primary-50 mb-8 text-center text-6xl/18 font-semibold tracking-tighter">Frequently asked questions</h2>
@@ -43,7 +43,7 @@ function FAQs() {
 
             <FAQList
             category={category}
-            question={questionsArr}
+            questions={questionsArr}
             activeQuestion={activeQuestion}
             handleQuestionClick={handleQuestionClick}
             />

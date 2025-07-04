@@ -7,7 +7,30 @@ function FAQList({ category, questions, activeQuestion, handleQuestionClick }) {
 
   return (
     <motion.ul
-    className="m-auto flex flex-col max-w-[51.625rem] gap-y-14 ">
+    className="m-auto flex flex-col max-w-[51.625rem] gap-y-14"
+    initial="hidden"
+    animate={inView ? "visible" : "hidden"}
+    key={category}
+    layout
+    variants={{
+        hidden: {opacity:0},
+        visible: {
+            transition: {
+                staggerChildren: 0.25,
+                ease: "easeIn"
+            }
+        }
+    }}
+
+    whileInView={ {opacity:1}}
+
+    onViewportEnter={ () => setView(true)}
+
+    onViewportLeave={ () => setView(false)}
+
+    viewport={{ once: false, amount: "100%"}}
+    >
+
       { questions.map((question) => (
         <FAQ 
         key={question.id}
